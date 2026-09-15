@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Peak Consulting (Pvt. Ltd.)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#707070',
+                        brandMint: '#2A9D8F',
+                        brandLightMint: '#E8F5F3',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Logo text representation, you can replace with your image logo if uploaded -->
+                <div class="text-2xl font-bold tracking-tight text-brandDark">
+                    MS <span class="text-brandMint">Peak</span> <span class="text-xs font-normal block sm:inline text-gray-500">Consulting (Pvt. Ltd.)</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="text-brandMint transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-brandMint transition">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-brandMint transition">Services</a>
+                <a href="#contact" class="text-gray-600 hover:text-brandMint transition">Contact Us</a>
+            </nav>
+            <div>
+                <a href="#contact" class="hidden sm:inline-block bg-brandMint text-white px-5 py-2.5 rounded-md font-medium hover:bg-opacity-90 transition shadow-sm">Get Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-brandLightMint to-white py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block bg-brandMint bg-opacity-10 text-brandMint px-4 py-1.5 rounded-full text-sm font-semibold mb-6">Your Trusted Business Partner</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brandDark tracking-tight mb-6">
+                Empowering Your Business Growth <br class="hidden sm:inline"> with <span class="text-brandMint">Expert Consulting</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-gray-600 mb-10">
+                MS Peak Consulting (Pvt. Ltd.) delivers high-tier corporate, financial, and strategic management solutions designed to scale your enterprise to new heights.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#services" class="bg-brandMint text-white px-8 py-3.5 rounded-md font-medium hover:bg-opacity-90 transition shadow-md">Our Services</a>
+                <a href="#contact" class="bg-white border border-gray-300 text-brandDark px-8 py-3.5 rounded-md font-medium hover:bg-gray-50 transition">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-brandDark mb-4">About MS Peak Consulting</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        At MS Peak Consulting (Pvt. Ltd.), we combine industry expertise with analytical rigor to help organizations navigate complex corporate environments. Our mission is to optimize performance, manage risks, and unlock sustainable value for our clients.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="text-brandMint mt-1"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Strategic Vision</h4>
+                                <p class="text-sm text-gray-500">Tailored corporate strategies aligned with your business goals.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="text-brandMint mt-1"><i class="fas fa-check-circle"></i></div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Professional Expertise</h4>
+                                <p class="text-sm text-gray-500">Experienced professionals dedicated to excellence and integrity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brandLightMint p-8 rounded-2xl border border-teal-100 shadow-inner">
+                    <h3 class="text-xl font-bold text-brandDark mb-4">Why Choose Us?</h3>
+                    <p class="text-gray-600 mb-6">We provide dedicated advisory services that transform challenges into competitive advantages, ensuring long-term profitability and operational efficiency.</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <span class="block text-2xl font-bold text-brandMint">100%</span>
+                            <span class="text-xs text-gray-500">Client Commitment</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <span class="block text-2xl font-bold text-brandMint">Expert</span>
+                            <span class="text-xs text-gray-500">Advisory Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-brandDark mb-4">Our Professional Services</h2>
+                <p class="text-gray-600">Comprehensive consulting solutions designed to streamline your business operations and accelerate financial growth.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-brandLightMint text-brandMint rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Business & Corporate Consulting</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Structuring, operational workflow optimization, and strategic business planning to enhance efficiency.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-brandLightMint text-brandMint rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Financial & Tax Advisory</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Expert financial analysis, compliance management, and advisory services tailored for corporate growth.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="w-12 h-12 bg-brandLightMint text-brandMint rounded-lg flex items-center justify-center text-xl mb-6">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brandDark mb-3">Management & Strategy</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Guiding leadership teams through transformation, market expansions, and corporate restructuring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-brandDark mb-4">Get In Touch</h2>
+                <p class="text-gray-600">Have a project in mind or need professional consultation? Reach out to us directly.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-brandLightMint text-brandMint rounded-lg flex items-center justify-center text-lg flex-shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Email Us</h4>
+                            <a href="mailto:info@mspeak.com.pk" class="text-brandMint hover:underline">info@mspeak.com.pk</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-brandLightMint text-brandMint rounded-lg flex items-center justify-center text-lg flex-shrink-0">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Call Us</h4>
+                            <a href="tel:+923122304446" class="text-brandMint hover:underline">+92 312 2304446</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-brandLightMint text-brandMint rounded-lg flex items-center justify-center text-lg flex-shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Office Location</h4>
+                            <p class="text-gray-600 text-sm">Pakistan</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form Mock -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brandMint">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brandMint">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brandMint"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brandMint text-white py-3 rounded-md font-medium hover:bg-opacity-95 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandDark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-xl font-bold mb-2">MS Peak Consulting (Pvt. Ltd.)</h3>
+            <p class="text-gray-400 text-sm mb-6">Empowering businesses with professional advisory and strategic solutions.</p>
+            <p class="text-xs text-gray-500">&copy; 2026 MS Peak Consulting (Pvt. Ltd.). All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
