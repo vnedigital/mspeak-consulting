@@ -10,9 +10,9 @@
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#1f2937',      /* Logo dark text color */
-                        brandGray: '#4b5563',      /* Logo grey boxes color */
-                        brandGreen: '#10b981',     /* Logo mint/sage green color */
+                        brandDark: '#1f2937',      
+                        brandGray: '#4b5563',      
+                        brandGreen: '#10b981',     
                         brandGreenHover: '#059669',
                         brandLightBg: '#f9fafb',
                     }
@@ -32,14 +32,10 @@
     <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Logo Graphic Simulation matching your brand -->
-                <div class="flex space-x-1 items-center">
-                    <div class="w-6 h-6 border-2 border-brandGray"></div>
-                    <div class="w-3 h-3 bg-brandGreen"></div>
-                </div>
-                <div class="text-xl font-bold tracking-tight text-brandDark">
-                    MS Peak <span class="text-xs font-normal block sm:inline text-gray-500">Consulting (Pvt. Ltd.)</span>
-                </div>
+                <!-- Real Logo Image Integration -->
+                <a href="#home" class="flex items-center">
+                    <img src="Service Company Consultant Sleek Logo_3.png" alt="MS Peak Consulting Logo" class="h-10 sm:h-12 w-auto object-contain">
+                </a>
             </div>
             <nav class="hidden md:flex space-x-8 font-medium text-sm">
                 <a href="#home" class="text-brandGreen font-semibold transition">Home</a>
@@ -72,7 +68,7 @@
         </div>
     </section>
 
-    <!-- Top Feature Cards matching logo colors -->
+    <!-- Top Feature Cards -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20 mb-20">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-gradient-to-b from-gray-800 to-gray-900 text-white p-8 rounded-2xl shadow-xl border border-gray-700">
@@ -109,19 +105,19 @@
                             <input type="number" id="monthlySalary" placeholder="Enter Your Monthly Salary" oninput="calculateTax()" class="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm">
                         </div>
                         <div class="grid grid-cols-2 gap-4 text-center">
-                            <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <div class="bg-white p-4 rounded-xl border border-gray-100">
                                 <span class="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">MONTHLY SALARY</span>
                                 <span id="resMonthlySalary" class="text-lg font-bold text-brandDark">0</span>
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <div class="bg-white p-4 rounded-xl border border-gray-100">
                                 <span class="block text-[10px] text-brandGreen font-bold uppercase tracking-wider mb-1">MONTHLY TAX</span>
                                 <span id="resMonthlyTax" class="text-lg font-bold text-brandGreen">0</span>
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <div class="bg-white p-4 rounded-xl border border-gray-100">
                                 <span class="block text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-1">YEARLY SALARY</span>
                                 <span id="resYearlySalary" class="text-lg font-bold text-brandDark">0</span>
                             </div>
-                            <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-xs">
+                            <div class="bg-white p-4 rounded-xl border border-gray-100">
                                 <span class="block text-[10px] text-brandGreen font-bold uppercase tracking-wider mb-1">YEARLY TAX</span>
                                 <span id="resYearlyTax" class="text-lg font-bold text-brandGreen">0</span>
                             </div>
@@ -147,25 +143,25 @@
                             <input type="number" id="whtAmount" placeholder="Enter Taxable Amount" oninput="calculateWHT()" class="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm">
                         </div>
                         <div class="grid grid-cols-3 gap-3 text-center pt-2">
-                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-xs col-span-1">
+                            <div class="bg-white p-3 rounded-xl border border-gray-100">
                                 <span class="block text-[9px] text-gray-500 font-bold uppercase mb-1">AMOUNT OF WHT</span>
                                 <span id="resWhtAmount" class="text-sm font-bold text-brandDark">0</span>
                             </div>
-                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-xs col-span-1">
+                            <div class="bg-white p-3 rounded-xl border border-gray-100">
                                 <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">FILER</span>
                                 <span id="resFiler" class="text-sm font-bold text-brandGreen">0</span>
                             </div>
-                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-xs col-span-1">
+                            <div class="bg-white p-3 rounded-xl border border-gray-100">
                                 <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">NON-FILER</span>
                                 <span id="resNonFiler" class="text-sm font-bold text-brandGreen">0</span>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-4 text-center">
-                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-xs">
+                            <div class="bg-white p-3 rounded-xl border border-gray-100">
                                 <span class="block text-[9px] text-gray-500 font-bold uppercase mb-1">PAYMENT AFTER TAX</span>
                                 <span id="resPaymentAfterTax" class="text-sm font-bold text-brandDark">0</span>
                             </div>
-                            <div class="bg-white p-3 rounded-xl border border-gray-100 shadow-xs">
+                            <div class="bg-white p-3 rounded-xl border border-gray-100">
                                 <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">STATUS</span>
                                 <span class="text-xs font-bold text-gray-600">Active Rates</span>
                             </div>
@@ -188,16 +184,16 @@
                         The aim of providing consultancy services in the fields of Tax, Corporate, Accounting, Bookkeeping, Audit, HR and other management consultancy services to clients.
                     </p>
                     <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-                        The firm has provided consultancy services to 1000+ clients and prides itself in being client's first choice to fulfill their business needs. We work with a wide range of clients – from local businesses to large corporate companies and global organizations.
+                        The firm has provided consultancy services to 1000+ clients and prides itself in being client's first choice to fulfill their business needs.
                     </p>
                     <a href="#contact" class="inline-flex items-center space-x-2 bg-brandDark text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-brandGreen transition">
                         <span>About Us</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-                <div class="bg-gray-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden border border-gray-800">
+                <div class="bg-gray-900 text-white p-8 rounded-2xl shadow-xl border border-gray-800">
                     <h3 class="text-2xl font-bold mb-6 text-brandGreen">Core Strengths</h3>
-                    <div class="space-y-6 relative z-10">
+                    <div class="space-y-6">
                         <div class="border-b border-gray-800 pb-4">
                             <h4 class="font-semibold text-white text-base mb-1">Specialized Skills</h4>
                             <p class="text-xs text-gray-300">Deep understanding of income tax, sales tax, and corporate compliance laws.</p>
@@ -224,22 +220,22 @@
                 <h2 class="text-3xl sm:text-4xl font-bold text-brandDark mt-1">What We Do For You!</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-white p-8 rounded-xl shadow-xs border border-gray-200 hover:border-brandGreen transition group">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
                     <span class="text-xs font-bold text-gray-400 block mb-4">01</span>
                     <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Taxation</h3>
                     <p class="text-gray-600 text-xs leading-relaxed">Expert tax planning, filing, and dispute resolution for corporate & individual entities.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-xs border border-gray-200 hover:border-brandGreen transition group">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
                     <span class="text-xs font-bold text-gray-400 block mb-4">02</span>
                     <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Accountancy</h3>
                     <p class="text-gray-600 text-xs leading-relaxed">Quality bookkeeping and accounting using modern tools and software for hassle-free processing.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-xs border border-gray-200 hover:border-brandGreen transition group">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
                     <span class="text-xs font-bold text-gray-400 block mb-4">03</span>
                     <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Corporate</h3>
                     <p class="text-gray-600 text-xs leading-relaxed">Company registration, SECP filings, restructuring, and comprehensive legal corporate affairs.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-xs border border-gray-200 hover:border-brandGreen transition group">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
                     <span class="text-xs font-bold text-gray-400 block mb-4">04</span>
                     <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Human Resource</h3>
                     <p class="text-gray-600 text-xs leading-relaxed">HR management consultancy, payroll structuring, and employee policy formation.</p>
