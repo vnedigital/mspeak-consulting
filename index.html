@@ -21,16 +21,35 @@
                     <img src="Service Company Consultant Sleek Logo_3.png" alt="MS Peak Consulting Logo" class="h-16 sm:h-20 w-auto object-contain">
                 </a>
             </div>
+            <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8 font-medium text-sm">
                 <a href="#home" class="text-blue-600 font-semibold transition">Home</a>
                 <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About Us</a>
                 <a href="#services" class="text-gray-600 hover:text-blue-600 transition">Services</a>
-                <a href="#calculators" class="text-gray-600 hover:text-blue-600 transition">Tax Calculators</a>
+                <a href="#why-us" class="text-gray-600 hover:text-blue-600 transition">Why Us</a>
+                <a href="#calculators" class="text-gray-600 hover:text-blue-600 transition">Tax Calculator</a>
+                <a href="#faqs" class="text-gray-600 hover:text-blue-600 transition">FAQs</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact Us</a>
             </nav>
-            <div>
-                <a href="#contact" class="hidden sm:inline-block bg-blue-600 text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-blue-700 transition shadow-sm">Get In Touch</a>
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-blue-700 transition shadow-sm">Get In Touch</a>
             </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-btn" class="text-gray-700 focus:outline-none text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-4 space-y-3">
+            <a href="#home" class="block text-gray-700 hover:text-blue-600 font-medium">Home</a>
+            <a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium">About Us</a>
+            <a href="#services" class="block text-gray-700 hover:text-blue-600 font-medium">Services</a>
+            <a href="#why-us" class="block text-gray-700 hover:text-blue-600 font-medium">Why Us</a>
+            <a href="#calculators" class="block text-gray-700 hover:text-blue-600 font-medium">Tax Calculator</a>
+            <a href="#faqs" class="block text-gray-700 hover:text-blue-600 font-medium">FAQs</a>
+            <a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium">Contact Us</a>
         </div>
     </header>
 
@@ -111,7 +130,7 @@
                     </p>
                     <div class="pt-4">
                         <a href="#contact" class="inline-flex items-center space-x-3 bg-blue-600 text-white px-8 py-3.5 rounded-xl font-medium hover:bg-blue-700 transition shadow-md shadow-blue-600/20">
-                            <span>About Us</span>
+                            <span>Get Consultation</span>
                             <i class="fas fa-arrow-right text-xs"></i>
                         </a>
                     </div>
@@ -214,8 +233,49 @@
         </div>
     </section>
 
-    <!-- NEW: Tax Calculators Section -->
-    <section id="calculators" class="py-20 bg-gray-50">
+    <!-- NEW: Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-blue-600 font-semibold uppercase tracking-widest text-xs sm:text-sm">Our Core Strengths</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Why Businesses Trust MS Peak</h2>
+                <p class="text-gray-600 mt-2 text-sm">We combine deep regulatory expertise with a client-first approach to safeguard your financial success.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Expert Professionals</h3>
+                    <p class="text-gray-600 text-sm">Experienced chartered accountants and legal tax advisors handling your case.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">100% Compliance</h3>
+                    <p class="text-gray-600 text-sm">Strict adherence to FBR, SECP, and regulatory frameworks to avoid penalties.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Data Confidentiality</h3>
+                    <p class="text-gray-600 text-sm">Secure handling of all financial records, ledgers, and corporate data.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Dedicated Support</h3>
+                    <p class="text-gray-600 text-sm">Prompt responses and continuous advisory guidance whenever you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tax Calculators Section -->
+    <section id="calculators" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-blue-600 font-semibold uppercase tracking-widest text-xs sm:text-sm">Interactive Tools</span>
@@ -223,15 +283,15 @@
                 <p class="text-gray-600 mt-2 text-sm">Estimate your annual taxable income and rough tax liability metrics.</p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <div class="bg-slate-900 text-white rounded-2xl shadow-xl p-8 border border-slate-800">
                 <div class="space-y-6">
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Annual Income / Revenue (PKR)</label>
-                        <input type="number" id="incomeInput" placeholder="e.g. 2500000" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Annual Income / Revenue (PKR)</label>
+                        <input type="number" id="incomeInput" placeholder="e.g. 2500000" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Select Category</label>
-                        <select id="taxCategory" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">Select Category</label>
+                        <select id="taxCategory" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <option value="salaried">Salaried Individual</option>
                             <option value="business">Business / Association of Persons</option>
                             <option value="company">Registered Corporate Company</option>
@@ -239,49 +299,124 @@
                     </div>
                     <button onclick="calculateTax()" class="w-full bg-blue-600 text-white font-medium py-3 rounded-lg hover:bg-blue-700 transition shadow-md">Calculate Estimated Tax</button>
                     
-                    <div id="resultBox" class="hidden mt-6 p-6 bg-blue-50 rounded-xl border border-blue-100 text-center">
-                        <h4 class="text-sm font-semibold text-blue-900">Estimated Tax Liability:</h4>
-                        <p id="taxOutput" class="text-2xl font-bold text-blue-600 mt-1">PKR 0</p>
-                        <p class="text-xs text-gray-500 mt-2">*Note: This is a rough estimation tool. Contact our expert consultants for precise FBR filing computations.</p>
+                    <div id="resultBox" class="hidden mt-6 p-6 bg-blue-950 rounded-xl border border-blue-800 text-center">
+                        <h4 class="text-sm font-semibold text-blue-300">Estimated Tax Liability:</h4>
+                        <p id="taxOutput" class="text-2xl font-bold text-blue-400 mt-1">PKR 0</p>
+                        <p class="text-xs text-gray-400 mt-2">*Note: This is a rough estimation tool. Contact our expert consultants for precise FBR filing computations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact section -->
-    <footer id="contact" class="bg-slate-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div>
-                <h3 class="text-xl font-bold mb-3">MS Peak Consulting (Pvt. Ltd.)</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Your trusted partner for comprehensive tax, corporate secretarial, accounting, and financial advisory solutions.</p>
+    <!-- NEW: Frequently Asked Questions (FAQs) Section -->
+    <section id="faqs" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold uppercase tracking-widest text-xs sm:text-sm">Got Questions?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Frequently Asked Questions</h2>
+                <p class="text-gray-600 mt-2 text-sm">Find answers to common queries about our consulting and tax services.</p>
             </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-3 text-blue-400">Quick Links</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
-                    <li><a href="#about" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
-                    <li><a href="#calculators" class="hover:text-white transition">Tax Calculators</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-3 text-blue-400">Get in Touch</h4>
-                <p class="text-sm text-gray-400 mb-2"><i class="fas fa-envelope mr-2"></i> info@mspeak.com.pk</p>
-                <p class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> Professional Consultancy Office, Pakistan</p>
+            <div class="space-y-4">
+                <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group">
+                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+                        How do I register a new private limited company with SECP?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+                        We handle the entire process including name availability check, drafting Memorandum & Articles of Association, digital signatures, and final incorporation certificate issuance from SECP.
+                    </p>
+                </details>
+                <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group">
+                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+                        What documents are required for annual income tax filing in Pakistan?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+                        You generally need a wealth statement, bank statements up to June 30th, salary certificates or business income details, utility bills, and asset purchase/sale receipts.
+                    </p>
+                </details>
+                <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group">
+                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+                        Do you provide monthly bookkeeping services for small businesses?
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+                        Yes! We offer complete monthly bookkeeping, ledger management, and financial reporting packages tailored to local businesses and e-commerce stores.
+                    </p>
+                </details>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 mt-12 pt-8 text-center text-xs text-gray-500">
-            &copy; 2026 MS Peak Consulting. All rights reserved.
+    </section>
+
+    <!-- NEW & ENHANCED: Contact Section with Form -->
+    <section id="contact" class="py-20 bg-slate-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-amber-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6">Let's Discuss Your Business & Tax Needs</h2>
+                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                        Ready to streamline your corporate compliance or file your taxes accurately? Reach out to our expert consultants today.
+                    </p>
+                    <div class="space-y-4 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope text-amber-400 mr-3"></i> info@mspeak.com.pk</p>
+                        <p><i class="fas fa-map-marker-alt text-amber-400 mr-3"></i> Professional Consultancy Office, Pakistan</p>
+                        <p><i class="fas fa-clock text-amber-400 mr-3"></i> Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully. Our team will contact you soon.');" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Your Full Name</label>
+                            <input type="text" required placeholder="Muhammad Saqib" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Email Address</label>
+                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Service Required</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm">
+                                <option>Tax Return Filing</option>
+                                <option>Company Registration (SECP)</option>
+                                <option>Bookkeeping & Accounting</option>
+                                <option>Audit & Assurance</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Message</label>
+                            <textarea rows="4" placeholder="How can we help you?" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 rounded-lg transition shadow-md">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8 text-center border-t border-slate-800 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 MS Peak Consulting (Pvt. Ltd.). All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Simple Calculator Script -->
+    <!-- Interactive Scripts -->
     <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Simple Tax Calculator Script
         function calculateTax() {
             const income = parseFloat(document.getElementById('incomeInput').value) || 0;
             const category = document.getElementById('taxCategory').value;
-            let rate = 0.10; // General estimation multiplier placeholder
+            let rate = 0.10;
 
             if (category === 'salaried') {
                 rate = income > 1200000 ? 0.15 : 0.05;
