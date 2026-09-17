@@ -10,7 +10,7 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         
-        /* Custom Dual-Shade & Animation Utilities */
+        /* Marquee Sliding Animation */
         @keyframes slideLoop {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -24,20 +24,47 @@
             animation-play-state: paused;
         }
         
-        /* Dual-Tone Background Gradient Utility */
-        .dual-bg {
-            background: linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #0f172a 100%);
+        /* Dual-Tone Background Shades */
+        .dual-bg-1 {
+            background: linear-gradient(135deg, rgba(9, 13, 22, 0.92) 0%, rgba(30, 27, 75, 0.92) 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat fixed;
+        }
+        .dual-bg-2 {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(10, 25, 47, 0.92) 100%), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat fixed;
+        }
+        .dual-bg-3 {
+            background: linear-gradient(135deg, rgba(9, 13, 22, 0.95) 0%, rgba(30, 27, 75, 0.95) 100%), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat fixed;
         }
         .dual-card {
-            background: linear-gradient(145deg, rgba(30, 27, 75, 0.6), rgba(15, 23, 42, 0.8));
+            background: linear-gradient(145deg, rgba(30, 27, 75, 0.75), rgba(15, 23, 42, 0.85));
             backdrop-filter: blur(12px);
+        }
+
+        /* Scroll Animation Classes */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .active-reveal {
+            opacity: 1;
+            transform: translate(0, 0);
         }
     </style>
 </head>
 <body class="bg-slate-950 text-gray-100 antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- Header / Navbar with Dual Shade Glassmorphism -->
-    <header class="bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800/80">
+    <!-- Header / Navbar -->
+    <header class="bg-slate-950/85 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <a href="#home" class="flex items-center">
@@ -65,7 +92,7 @@
             </div>
         </div>
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden dual-bg border-b border-slate-800 px-6 py-4 space-y-3">
+        <div id="mobile-menu" class="hidden md:hidden dual-bg-1 border-b border-slate-800 px-6 py-4 space-y-3">
             <a href="#home" class="block text-gray-200 hover:text-blue-400 font-medium">Home</a>
             <a href="#about" class="block text-gray-200 hover:text-blue-400 font-medium">About Us</a>
             <a href="#services" class="block text-gray-200 hover:text-blue-400 font-medium">Services</a>
@@ -76,13 +103,10 @@
         </div>
     </header>
 
-    <!-- Hero Section with Dual-Shade Background & Glowing Elements -->
-    <section id="home" class="relative dual-bg text-white py-24 lg:py-36 overflow-hidden">
-        <!-- Decorative Glow Gradients -->
+    <!-- Hero Section -->
+    <section id="home" class="relative dual-bg-1 text-white py-24 lg:py-36 overflow-hidden">
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-10 w-80 h-80 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal-up">
             <span class="inline-flex items-center space-x-2 bg-blue-900/50 text-blue-300 px-4 py-1.5 rounded-full text-xs font-bold mb-6 border border-blue-500/30 shadow-inner">
                 <i class="fas fa-award text-amber-400"></i>
                 <span>First-Class Tax & Corporate Consultancy Firm</span>
@@ -100,7 +124,7 @@
         </div>
     </section>
 
-    <!-- Sliding Marquee / Features Bar (New Sliding Feature) -->
+    <!-- Sliding Marquee Bar -->
     <div class="bg-gradient-to-r from-blue-900 via-indigo-950 to-blue-900 py-4 overflow-hidden border-y border-blue-800/40 shadow-inner">
         <div class="animate-marquee whitespace-nowrap flex items-center space-x-12 text-sm font-semibold tracking-wide text-blue-200">
             <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> SECP Company Incorporation</span>
@@ -108,7 +132,6 @@
             <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Professional Monthly Bookkeeping</span>
             <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Internal & External Audits</span>
             <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Trademark & Legal Advisory</span>
-            <!-- Duplicate for smooth loop -->
             <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> SECP Company Incorporation</span>
             <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> FBR Income Tax & Sales Tax Returns</span>
             <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Professional Monthly Bookkeeping</span>
@@ -117,24 +140,24 @@
         </div>
     </div>
 
-    <!-- Top Feature Cards with Dual-Shade Hover Effects -->
+    <!-- Top Feature Cards (Sliding Up) -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-20">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group">
+            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group reveal-up">
                 <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Advanced Analytics</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">Data-driven growth, tax forecasting & deep financial analysis.</p>
             </div>
-            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group">
+            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group reveal-up" style="transition-delay: 150ms;">
                 <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
                     <i class="fas fa-bullseye"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Corporate Finance</h3>
                 <p class="text-gray-400 text-sm leading-relaxed">Strategic financial planning as the foundation of enterprise success.</p>
             </div>
-            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group">
+            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group reveal-up" style="transition-delay: 300ms;">
                 <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
                     <i class="fas fa-handshake"></i>
                 </div>
@@ -144,12 +167,12 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-slate-900/50 relative overflow-hidden">
+    <!-- About Us Section (Left & Right Sliding Effect) -->
+    <section id="about" class="py-20 dual-bg-2 relative overflow-hidden border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Dual-Shade Box -->
-                <div class="relative dual-card p-8 sm:p-12 rounded-3xl shadow-2xl border border-slate-700/80 text-white">
+                <!-- Left Box Slides From Left -->
+                <div class="relative dual-card p-8 sm:p-12 rounded-3xl shadow-2xl border border-slate-700/80 text-white reveal-left">
                     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
                     <div class="relative z-10 space-y-6">
                         <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
@@ -166,8 +189,8 @@
                     </div>
                 </div>
 
-                <!-- Right Content -->
-                <div class="space-y-6">
+                <!-- Right Content Slides From Right -->
+                <div class="space-y-6 reveal-right">
                     <div class="inline-flex items-center space-x-2 text-blue-400 font-semibold text-sm tracking-wider uppercase">
                         <span class="w-8 h-0.5 bg-blue-500"></span>
                         <span>About Our Firm</span>
@@ -179,7 +202,7 @@
                         Our primary goal is to provide top-tier consultancy services in the fields of Tax, Corporate structuring, Accounting, Bookkeeping, Audit, HR, and complete management solutions.
                     </p>
                     <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
-                        We take pride in being our clients' first choice for fulfilling rigorous business needs. We work with a broad spectrum of clients – ranging from ambitious local startups to large corporate entities and international organizations.
+                        We take pride in being our clients' first choice for fulfilling rigorous business needs. We work with a broad spectrum of clients – ranging from ambitious local startups to large corporate entities.
                     </p>
                     <div class="pt-4">
                         <a href="#contact" class="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-600/20">
@@ -192,9 +215,9 @@
         </div>
     </section>
 
-    <!-- Services Section with Dual-Tone Overlays -->
-    <section id="services" class="relative dual-bg py-24 overflow-hidden border-y border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <!-- Services Section -->
+    <section id="services" class="relative dual-bg-3 py-24 overflow-hidden border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 reveal-up">
             <div class="flex items-center space-x-3 mb-3">
                 <div class="w-10 h-0.5 bg-amber-400"></div>
                 <span class="text-amber-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Our Expertise</span>
@@ -204,7 +227,7 @@
             </h2>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-up">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto lg:h-[450px]">
                 
                 <!-- Card 1 -->
@@ -284,36 +307,36 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="py-20 bg-slate-950">
+    <section id="why-us" class="py-20 dual-bg-1">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
                 <span class="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Our Core Strengths</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Why Businesses Trust MS Peak</h2>
                 <p class="text-gray-400 mt-2 text-sm">We combine deep regulatory expertise with a client-first approach to safeguard your financial success.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group reveal-up">
                     <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Expert Professionals</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Experienced chartered accountants and legal tax advisors handling your case.</p>
                 </div>
-                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group reveal-up" style="transition-delay: 150ms;">
                     <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">100% Compliance</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Strict adherence to FBR, SECP, and regulatory frameworks to avoid penalties.</p>
                 </div>
-                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group reveal-up" style="transition-delay: 300ms;">
                     <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-lock"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Data Confidentiality</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Secure handling of all financial records, ledgers, and corporate data.</p>
                 </div>
-                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group reveal-up" style="transition-delay: 450ms;">
                     <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-headset"></i>
                     </div>
@@ -325,15 +348,15 @@
     </section>
 
     <!-- Tax Calculators Section -->
-    <section id="calculators" class="py-20 dual-bg border-t border-slate-800">
+    <section id="calculators" class="py-20 dual-bg-2 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
+            <div class="text-center mb-12 reveal-up">
                 <span class="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Interactive Tools</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Quick Estimate Calculator</h2>
                 <p class="text-gray-400 mt-2 text-sm">Estimate your annual taxable income and rough tax liability metrics.</p>
             </div>
 
-            <div class="dual-card rounded-2xl shadow-2xl p-8 sm:p-10 border border-slate-700/80">
+            <div class="dual-card rounded-2xl shadow-2xl p-8 sm:p-10 border border-slate-700/80 reveal-up">
                 <div class="space-y-6">
                     <div>
                         <label class="block text-sm font-semibold text-gray-300 mb-2">Annual Income / Revenue (PKR)</label>
@@ -359,39 +382,39 @@
         </div>
     </section>
 
-    <!-- FAQs Section -->
-    <section id="faqs" class="py-20 bg-slate-950">
+    <!-- FAQs Section (Sliding Dropdown Accordion) -->
+    <section id="faqs" class="py-20 dual-bg-3">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 reveal-up">
                 <span class="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Got Questions?</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Frequently Asked Questions</h2>
                 <p class="text-gray-400 mt-2 text-sm">Find answers to common queries about our consulting and tax services.</p>
             </div>
-            <div class="space-y-4">
-                <details class="dual-card p-6 rounded-xl border border-slate-800 group">
-                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center">
-                        How do I register a new private limited company with SECP?
-                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform"></i>
+            <div class="space-y-4 reveal-up">
+                <details class="dual-card p-6 rounded-xl border border-slate-800 group transition-all duration-300">
+                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center select-none">
+                        <span>How do I register a new private limited company with SECP?</span>
+                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform duration-300"></i>
                     </summary>
-                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed pt-2 border-t border-slate-800/80">
                         We handle the entire process including name availability check, drafting Memorandum & Articles of Association, digital signatures, and final incorporation certificate issuance from SECP.
                     </p>
                 </details>
-                <details class="dual-card p-6 rounded-xl border border-slate-800 group">
-                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center">
-                        What documents are required for annual income tax filing in Pakistan?
-                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform"></i>
+                <details class="dual-card p-6 rounded-xl border border-slate-800 group transition-all duration-300">
+                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center select-none">
+                        <span>What documents are required for annual income tax filing in Pakistan?</span>
+                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform duration-300"></i>
                     </summary>
-                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed pt-2 border-t border-slate-800/80">
                         You generally need a wealth statement, bank statements up to June 30th, salary certificates or business income details, utility bills, and asset purchase/sale receipts.
                     </p>
                 </details>
-                <details class="dual-card p-6 rounded-xl border border-slate-800 group">
-                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center">
-                        Do you provide monthly bookkeeping services for small businesses?
-                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform"></i>
+                <details class="dual-card p-6 rounded-xl border border-slate-800 group transition-all duration-300">
+                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center select-none">
+                        <span>Do you provide monthly bookkeeping services for small businesses?</span>
+                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform duration-300"></i>
                     </summary>
-                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed pt-2 border-t border-slate-800/80">
                         Yes! We offer complete monthly bookkeeping, ledger management, and financial reporting packages tailored to local businesses and e-commerce stores.
                     </p>
                 </details>
@@ -399,11 +422,12 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 dual-bg border-t border-slate-800 text-white">
+    <!-- Contact Section (Sliding Elements from Left & Right) -->
+    <section id="contact" class="py-20 dual-bg-1 border-t border-slate-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
+                <!-- Left Details Slides From Left -->
+                <div class="reveal-left">
                     <span class="text-amber-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Get In Touch</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6">Let's Discuss Your Business & Tax Needs</h2>
                     <p class="text-gray-300 text-sm mb-8 leading-relaxed">
@@ -415,7 +439,8 @@
                         <p><i class="fas fa-clock text-amber-400 mr-3"></i> Monday - Saturday: 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                <div class="dual-card p-8 sm:p-10 rounded-2xl border border-slate-700 shadow-2xl">
+                <!-- Right Form Slides From Right -->
+                <div class="dual-card p-8 sm:p-10 rounded-2xl border border-slate-700 shadow-2xl reveal-right">
                     <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully. Our team will contact you soon.');" class="space-y-4">
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Your Full Name</label>
@@ -452,7 +477,7 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
+    <!-- Interactive Scripts & Scroll Animation Observer -->
     <script>
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
@@ -480,6 +505,27 @@
             document.getElementById('taxOutput').innerText = 'PKR ' + estimatedTax.toLocaleString();
             document.getElementById('resultBox').classList.remove('hidden');
         }
+
+        // Scroll Reveal Animation (Intersection Observer)
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-reveal');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+            revealElements.forEach(el => observer.observe(el));
+        });
     </script>
 </body>
 </html>
