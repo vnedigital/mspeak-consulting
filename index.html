@@ -134,9 +134,9 @@
                     <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 shadow-sm space-y-4">
                         <div>
                             <select id="whtCategory" onchange="calculateWHT()" class="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm text-gray-700">
-                                <option value="0.15">Toll Manufacturing / Services (15% / 30%)</option>
-                                <option value="0.10">Supplies (10% / 20%)</option>
-                                <option value="0.05">Imports (5% / 10%)</option>
+                                <option value="services">Toll Manufacturing / Services (Filer: 15% | Non-Filer: 30%)</option>
+                                <option value="supplies">Supplies (Filer: 10% | Non-Filer: 20%)</option>
+                                <option value="imports">Imports (Filer: 5% | Non-Filer: 10%)</option>
                             </select>
                         </div>
                         <div>
@@ -144,27 +144,23 @@
                         </div>
                         <div class="grid grid-cols-3 gap-3 text-center pt-2">
                             <div class="bg-white p-3 rounded-xl border border-gray-100">
-                                <span class="block text-[9px] text-gray-500 font-bold uppercase mb-1">AMOUNT OF WHT</span>
+                                <span class="block text-[9px] text-gray-500 font-bold uppercase mb-1">TAXABLE AMT</span>
                                 <span id="resWhtAmount" class="text-sm font-bold text-brandDark">0</span>
                             </div>
                             <div class="bg-white p-3 rounded-xl border border-gray-100">
-                                <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">FILER</span>
+                                <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">FILER TAX</span>
                                 <span id="resFiler" class="text-sm font-bold text-brandGreen">0</span>
                             </div>
                             <div class="bg-white p-3 rounded-xl border border-gray-100">
-                                <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">NON-FILER</span>
+                                <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">NON-FILER TAX</span>
                                 <span id="resNonFiler" class="text-sm font-bold text-brandGreen">0</span>
                             </div>
                         </div>
-                        <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="grid grid-cols-1 text-center">
                             <div class="bg-white p-3 rounded-xl border border-gray-100">
-                                <span class="block text-[9px] text-gray-500 font-bold uppercase mb-1">PAYMENT AFTER TAX</span>
+                                <span class="block text-[9px] text-gray-500 font-bold uppercase mb-1">PAYMENT AFTER TAX (FILER)</span>
                                 <span id="resPaymentAfterTax" class="text-sm font-bold text-brandDark">0</span>
                             </div>
-                            <div class="bg-white p-3 rounded-xl border border-gray-100">
-                                <span class="block text-[9px] text-brandGreen font-bold uppercase mb-1">STATUS</span>
-                                <span class="text-xs font-bold text-gray-600">Active Rates</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,216 +169,67 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-brandGreen font-semibold uppercase tracking-wider text-xs">ABOUT FIRM</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-brandDark mt-2 mb-6">About MS Peak Consulting & Co.</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed text-sm">
-                        The aim of providing consultancy services in the fields of Tax, Corporate, Accounting, Bookkeeping, Audit, HR and other management consultancy services to clients.
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-                        The firm has provided consultancy services to 1000+ clients and prides itself in being client's first choice to fulfill their business needs.
-                    </p>
-                    <a href="#contact" class="inline-flex items-center space-x-2 bg-brandDark text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-brandGreen transition">
-                        <span>About Us</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="bg-gray-900 text-white p-8 rounded-2xl shadow-xl border border-gray-800">
-                    <h3 class="text-2xl font-bold mb-6 text-brandGreen">Core Strengths</h3>
-                    <div class="space-y-6">
-                        <div class="border-b border-gray-800 pb-4">
-                            <h4 class="font-semibold text-white text-base mb-1">Specialized Skills</h4>
-                            <p class="text-xs text-gray-300">Deep understanding of income tax, sales tax, and corporate compliance laws.</p>
-                        </div>
-                        <div class="border-b border-gray-800 pb-4">
-                            <h4 class="font-semibold text-white text-base mb-1">Confidentiality</h4>
-                            <p class="text-xs text-gray-300">Strict safeguards for privileged and sensitive client financial records.</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-white text-base mb-1">Client Satisfaction</h4>
-                            <p class="text-xs text-gray-300">Tailored solutions catering to individual business concerns with top priority.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <span class="text-brandGreen font-semibold uppercase tracking-wider text-xs">OUR SERVICES</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-brandDark mt-1">What We Do For You!</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
-                    <span class="text-xs font-bold text-gray-400 block mb-4">01</span>
-                    <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Taxation</h3>
-                    <p class="text-gray-600 text-xs leading-relaxed">Expert tax planning, filing, and dispute resolution for corporate & individual entities.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
-                    <span class="text-xs font-bold text-gray-400 block mb-4">02</span>
-                    <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Accountancy</h3>
-                    <p class="text-gray-600 text-xs leading-relaxed">Quality bookkeeping and accounting using modern tools and software for hassle-free processing.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
-                    <span class="text-xs font-bold text-gray-400 block mb-4">03</span>
-                    <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Corporate</h3>
-                    <p class="text-gray-600 text-xs leading-relaxed">Company registration, SECP filings, restructuring, and comprehensive legal corporate affairs.</p>
-                </div>
-                <div class="bg-white p-8 rounded-xl border border-gray-200 hover:border-brandGreen transition group">
-                    <span class="text-xs font-bold text-gray-400 block mb-4">04</span>
-                    <h3 class="text-xl font-bold text-brandDark mb-3 group-hover:text-brandGreen transition">Human Resource</h3>
-                    <p class="text-gray-600 text-xs leading-relaxed">HR management consultancy, payroll structuring, and employee policy formation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="bg-brandDark text-white py-16 border-t border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-                <div class="text-5xl font-extrabold mb-2 text-brandGreen">17+</div>
-                <div class="text-gray-400 uppercase tracking-widest text-xs font-semibold">Years of Experience</div>
-            </div>
-            <div>
-                <div class="text-5xl font-extrabold mb-2 text-brandGreen">1000+</div>
-                <div class="text-gray-400 uppercase tracking-widest text-xs font-semibold">Trusted Clients</div>
-            </div>
-            <div>
-                <div class="text-5xl font-extrabold mb-2 text-brandGreen">3000+</div>
-                <div class="text-gray-400 uppercase tracking-widest text-xs font-semibold">Finished Projects</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Team Section -->
-    <section id="team" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brandGreen font-semibold uppercase tracking-wider text-xs">PROFESSIONALS</span>
-                <h2 class="text-3xl font-bold text-brandDark mt-1">Our Team</h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 text-center pb-6">
-                    <div class="bg-gray-200 h-64 mb-4 flex items-center justify-center text-gray-400"><i class="fas fa-user text-5xl"></i></div>
-                    <h3 class="font-bold text-brandDark text-lg">Senior Partner</h3>
-                    <p class="text-xs text-brandGreen font-medium">Tax Consultant</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 text-center pb-6">
-                    <div class="bg-gray-200 h-64 mb-4 flex items-center justify-center text-gray-400"><i class="fas fa-user text-5xl"></i></div>
-                    <h3 class="font-bold text-brandDark text-lg">Corporate Lead</h3>
-                    <p class="text-xs text-brandGreen font-medium">Legal Advisor</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 text-center pb-6">
-                    <div class="bg-gray-200 h-64 mb-4 flex items-center justify-center text-gray-400"><i class="fas fa-user text-5xl"></i></div>
-                    <h3 class="font-bold text-brandDark text-lg">Audit Head</h3>
-                    <p class="text-xs text-brandGreen font-medium">Chartered Accountant</p>
-                </div>
-                <div class="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 text-center pb-6">
-                    <div class="bg-gray-200 h-64 mb-4 flex items-center justify-center text-gray-400"><i class="fas fa-user text-5xl"></i></div>
-                    <h3 class="font-bold text-brandDark text-lg">HR Director</h3>
-                    <p class="text-xs text-brandGreen font-medium">Management Specialist</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <span class="text-brandGreen font-semibold uppercase tracking-wider text-xs">CONTACT US</span>
-                    <h2 class="text-3xl font-bold text-brandDark mt-1 mb-6">We help you see the world differently</h2>
-                    <p class="text-gray-600 text-sm mb-8">Get in touch with our expert team for prompt consultation regarding tax, corporate, or financial queries.</p>
-                    <div class="space-y-4 text-sm text-gray-700">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-envelope text-brandGreen"></i>
-                            <span>info@mspeak.com.pk</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-phone-alt text-brandGreen"></i>
-                            <span>+92 312 2304446</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-                    <form onsubmit="event.preventDefault(); alert('Thank you! Your query has been submitted.');" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Name *</label>
-                            <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Phone Numbers *</label>
-                            <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Email *</label>
-                            <input type="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-700 uppercase mb-1">Message</label>
-                            <textarea rows="3" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-brandGreen text-sm"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-brandGreen text-white py-3.5 rounded-md font-medium text-sm hover:bg-brandGreenHover transition shadow-sm">Submit Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-brandDark text-white py-12 text-center text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-xl font-bold mb-2">MS Peak Consulting (Pvt. Ltd.)</h3>
-            <p class="text-gray-400 text-xs mb-6">Your Trusted Partner in Tax, Corporate, and Financial Solutions.</p>
-            <p class="text-[11px] text-gray-500">&copy; 2026 MS Peak Consulting (Pvt. Ltd.). All rights reserved.</p>
+    <!-- Footer / Contact Section Placeholder -->
+    <footer id="contact" class="bg-brandDark text-white py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-4">MS Peak Consulting (Pvt. Ltd.)</h3>
+            <p class="text-gray-400 text-sm">Your Trusted Tax & Corporate Consultants</p>
         </div>
     </footer>
 
-    <!-- Interactive Logic Scripts -->
+    <!-- JavaScript for Calculators -->
     <script>
         function calculateTax() {
-            let mSalary = parseFloat(document.getElementById('monthlySalary').value) || 0;
-            let ySalary = mSalary * 12;
-            
-            let yTax = 0;
-            if (ySalary > 600000 && ySalary <= 1200000) {
-                yTax = (ySalary - 600000) * 0.025;
-            } else if (ySalary > 1200000 && ySalary <= 2400000) {
-                yTax = 15000 + (ySalary - 1200000) * 0.125;
-            } else if (ySalary > 2400000) {
-                yTax = 165000 + (ySalary - 2400000) * 0.225;
-            }
-            
-            let mTax = yTax / 12;
+            let monthlySalary = parseFloat(document.getElementById('monthlySalary').value) || 0;
+            let yearlySalary = monthlySalary * 12;
+            let yearlyTax = 0;
 
-            document.getElementById('resMonthlySalary').innerText = mSalary.toLocaleString('en-PK', {maximumFractionDigits: 0});
-            document.getElementById('resMonthlyTax').innerText = mTax.toLocaleString('en-PK', {maximumFractionDigits: 0});
-            document.getElementById('resYearlySalary').innerText = ySalary.toLocaleString('en-PK', {maximumFractionDigits: 0});
-            document.getElementById('resYearlyTax').innerText = yTax.toLocaleString('en-PK', {maximumFractionDigits: 0});
+            // Basic slab-based calculation logic (Customizable as per Pakistani tax laws if required)
+            if (yearlySalary <= 600000) {
+                yearlyTax = 0;
+            } else if (yearlySalary <= 1200000) {
+                yearlyTax = (yearlySalary - 600000) * 0.01;
+            } else if (yearlySalary <= 2400000) {
+                yearlyTax = 6000 + (yearlySalary - 1200000) * 0.15;
+            } else if (yearlySalary <= 3600000) {
+                yearlyTax = 186000 + (yearlySalary - 2400000) * 0.25;
+            } else {
+                yearlyTax = 486000 + (yearlySalary - 3600000) * 0.35;
+            }
+
+            let monthlyTax = yearlyTax / 12;
+
+            document.getElementById('resMonthlySalary').innerText = monthlySalary.toLocaleString();
+            document.getElementById('resMonthlyTax').innerText = Math.round(monthlyTax).toLocaleString();
+            document.getElementById('resYearlySalary').innerText = yearlySalary.toLocaleString();
+            document.getElementById('resYearlyTax').innerText = Math.round(yearlyTax).toLocaleString();
         }
 
         function calculateWHT() {
             let amount = parseFloat(document.getElementById('whtAmount').value) || 0;
-            let rateMultiplier = parseFloat(document.getElementById('whtCategory').value) || 0.15;
-            
-            let whtAmount = amount * rateMultiplier;
-            let filerTax = whtAmount;
-            let nonFilerTax = whtAmount * 2;
-            let paymentAfter = amount - filerTax;
+            let category = document.getElementById('whtCategory').value;
+            let filerRate = 0;
+            let nonFilerRate = 0;
 
-            document.getElementById('resWhtAmount').innerText = whtAmount.toLocaleString('en-PK', {maximumFractionDigits: 0});
-            document.getElementById('resFiler').innerText = filerTax.toLocaleString('en-PK', {maximumFractionDigits: 0});
-            document.getElementById('resNonFiler').innerText = nonFilerTax.toLocaleString('en-PK', {maximumFractionDigits: 0});
-            document.getElementById('resPaymentAfterTax').innerText = paymentAfter.toLocaleString('en-PK', {maximumFractionDigits: 0});
+            if (category === 'services') {
+                filerRate = 0.15;
+                nonFilerRate = 0.30;
+            } else if (category === 'supplies') {
+                filerRate = 0.10;
+                nonFilerRate = 0.20;
+            } else if (category === 'imports') {
+                filerRate = 0.05;
+                nonFilerRate = 0.10;
+            }
+
+            let filerTax = amount * filerRate;
+            let nonFilerTax = amount * nonFilerRate;
+            let paymentAfterTax = amount - filerTax;
+
+            document.getElementById('resWhtAmount').innerText = amount.toLocaleString();
+            document.getElementById('resFiler').innerText = Math.round(filerTax).toLocaleString();
+            document.getElementById('resNonFiler').innerText = Math.round(nonFilerTax).toLocaleString();
+            document.getElementById('resPaymentAfterTax').innerText = Math.round(paymentAfterTax).toLocaleString();
         }
     </script>
 </body>
