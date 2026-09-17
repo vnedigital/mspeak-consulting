@@ -456,36 +456,112 @@
     <section id="calculators" class="py-20 dual-bg-3 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal-up">
-                <span class="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Interactive Tools</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Quick Estimate Calculator</h2>
-                <p class="text-gray-400 mt-2 text-sm">Estimate your annual taxable income and rough tax liability metrics.</p>
-            </div>
+                <span class="te<!-- Tax Calculators Section -->
+<section id="calculators" class="py-16 px-4 bg-[#0B0F19] text-white font-sans">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Section Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">Quick Estimate Calculators</h2>
+      <p class="text-gray-400 text-sm md:text-base">Estimate your annual/monthly taxable income, salary tax, and withholding tax metrics accurately.</p>
+    </div>
 
-            <div class="dual-card rounded-2xl shadow-2xl p-8 sm:p-10 border border-slate-700/80 reveal-up">
-                <div class="space-y-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-300 mb-2">Annual Income / Revenue (PKR)</label>
-                        <input type="number" id="incomeInput" placeholder="e.g. 2500000" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-300 mb-2">Select Category</label>
-                        <select id="taxCategory" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                            <option value="salaried">Salaried Individual</option>
-                            <option value="business">Business / Association of Persons</option>
-                            <option value="company">Registered Corporate Company</option>
-                        </select>
-                    </div>
-                    <button onclick="calculateTax()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 rounded-xl hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-600/25">Calculate Estimated Tax</button>
-                    
-                    <div id="resultBox" class="hidden mt-6 p-6 bg-slate-900/90 rounded-xl border border-blue-500/40 text-center">
-                        <h4 class="text-sm font-semibold text-blue-300">Estimated Tax Liability:</h4>
-                        <p id="taxOutput" class="text-3xl font-extrabold text-blue-400 mt-1">PKR 0</p>
-                        <p class="text-xs text-gray-400 mt-2">*Note: This is a rough estimation tool. Contact our expert consultants for precise FBR computations.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Calculators Grid Container -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+      <!-- ================= 1. SALARY TAX CALCULATOR ================= -->
+      <div class="bg-[#131B2E] border border-gray-800 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+        <h3 class="text-xl font-bold text-red-500 mb-6 tracking-wide uppercase text-center lg:text-left">Salary Tax Calculator</h3>
+        
+        <!-- Input Field -->
+        <div class="mb-6">
+          <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Enter Your Monthly Salary (PKR)</label>
+          <input type="number" id="monthlySalaryInput" placeholder="e.g. 150000" 
+            class="w-full bg-[#0B0F19] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+            oninput="calculateSalaryTax()">
         </div>
-    </section>
+
+        <!-- Results Grid -->
+        <div class="grid grid-cols-3 gap-2 md:gap-4 text-center">
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Monthly Salary</span>
+            <span id="resMonthlySalary" class="text-sm md:text-lg font-bold text-white">0</span>
+          </div>
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Monthly Tax</span>
+            <span id="resMonthlyTax" class="text-sm md:text-lg font-bold text-red-400">0</span>
+          </div>
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Net Salary</span>
+            <span id="resNetMonthly" class="text-sm md:text-lg font-bold text-green-400">0</span>
+          </div>
+
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Yearly Salary</span>
+            <span id="resYearlySalary" class="text-sm md:text-lg font-bold text-white">0</span>
+          </div>
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Yearly Tax</span>
+            <span id="resYearlyTax" class="text-sm md:text-lg font-bold text-red-400">0</span>
+          </div>
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Net Yearly</span>
+            <span id="resNetYearly" class="text-sm md:text-lg font-bold text-green-400">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= 2. WITHHOLDING TAX CALCULATOR ================= -->
+      <div class="bg-[#131B2E] border border-gray-800 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-pink-600"></div>
+        <h3 class="text-xl font-bold text-red-500 mb-6 tracking-wide uppercase text-center lg:text-left">Withholding Tax Calculator</h3>
+        
+        <!-- Dropdown & Input Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Select Category</label>
+            <select id="whtCategory" class="w-full bg-[#0B0F19] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 transition" onchange="calculateWHT()">
+              <option value="toll">Toll Manufacturing (Filer: 4%, Non-Filer: 8%)</option>
+              <option value="services">Services / General (Filer: 15%, Non-Filer: 30%)</option>
+              <option value="supplies">Supplies / Goods (Filer: 4.5%, Non-Filer: 9%)</option>
+              <option value="imports">Commercial Imports (Filer: 5.5%, Non-Filer: 11%)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2 font-semibold">Enter Taxable Amount (PKR)</label>
+            <input type="number" id="whtAmountInput" placeholder="e.g. 500000" 
+              class="w-full bg-[#0B0F19] border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition"
+              oninput="calculateWHT()">
+          </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="grid grid-cols-3 gap-2 md:gap-4 text-center">
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl col-span-3">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Withholding Tax Amount (WHT)</span>
+            <span id="resWhtAmount" class="text-base md:text-xl font-bold text-red-400">0</span>
+          </div>
+
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl col-span-1.5">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Filer Rate Tax</span>
+            <span id="resFilerTax" class="text-sm md:text-lg font-bold text-yellow-400">0</span>
+          </div>
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl col-span-1.5">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Non-Filer Rate Tax</span>
+            <span id="resNonFilerTax" class="text-sm md:text-lg font-bold text-orange-400">0</span>
+          </div>
+          
+          <div class="bg-[#0B0F19]/60 border border-gray-800/80 p-3 rounded-xl col-span-3">
+            <span class="block text-[10px] md:text-xs text-gray-400 font-semibold uppercase mb-1">Net Payment After Tax</span>
+            <span id="resNetPayment" class="text-sm md:text-lg font-bold text-green-400">0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- FAQs Section (Sliding Dropdown Accordion) -->
     <section id="faqs" class="py-20 dual-bg-1">
@@ -592,24 +668,78 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Simple Tax Calculator Script
-        function calculateTax() {
-            const income = parseFloat(document.getElementById('incomeInput').value) || 0;
-            const category = document.getElementById('taxCategory').value;
-            let rate = 0.10;
+        // Number Formatter for PKR currency formatting
+function formatPKR(val) {
+  return new Intl.NumberFormat('en-PK', { maximumFractionDigits: 0 }).format(val || 0);
+}
 
-            if (category === 'salaried') {
-                rate = income > 1200000 ? 0.15 : 0.05;
-            } else if (category === 'business') {
-                rate = 0.20;
-            } else if (category === 'company') {
-                rate = 0.29;
-            }
+// 1. Salary Tax Calculation Logic (As per standard Pakistan Tax Slabs / FBR guidelines)
+function calculateSalaryTax() {
+  const monthlySalary = parseFloat(document.getElementById('monthlySalaryInput').value) || 0;
+  const yearlySalary = monthlySalary * 12;
+  
+  let yearlyTax = 0;
 
-            const estimatedTax = income * rate;
-            document.getElementById('taxOutput').innerText = 'PKR ' + estimatedTax.toLocaleString();
-            document.getElementById('resultBox').classList.remove('hidden');
-        }
+  // FBR Annual Salary Tax Slabs Logic
+  if (yearlySalary <= 600000) {
+    yearlyTax = 0;
+  } else if (yearlySalary > 600000 && yearlySalary <= 1200000) {
+    yearlyTax = (yearlySalary - 600000) * 0.05;
+  } else if (yearlySalary > 1200000 && yearlySalary <= 2200000) {
+    yearlyTax = 30000 + (yearlySalary - 1200000) * 0.15;
+  } else if (yearlySalary > 2200000 && yearlySalary <= 3200000) {
+    yearlyTax = 180000 + (yearlySalary - 2200000) * 0.25;
+  } else if (yearlySalary > 3200000 && yearlySalary <= 4100000) {
+    yearlyTax = 430000 + (yearlySalary - 3200000) * 0.30;
+  } else {
+    yearlyTax = 700000 + (yearlySalary - 4100000) * 0.35;
+  }
+
+  const monthlyTax = yearlyTax / 12;
+  const netMonthly = monthlySalary - monthlyTax;
+  const netYearly = yearlySalary - yearlyTax;
+
+  // Render to DOM elements
+  document.getElementById('resMonthlySalary').innerText = formatPKR(monthlySalary);
+  document.getElementById('resMonthlyTax').innerText = formatPKR(monthlyTax);
+  document.getElementById('resNetMonthly').innerText = formatPKR(netMonthly);
+  
+  document.getElementById('resYearlySalary').innerText = formatPKR(yearlySalary);
+  document.getElementById('resYearlyTax').innerText = formatPKR(yearlyTax);
+  document.getElementById('resNetYearly').innerText = formatPKR(netYearly);
+}
+
+// 2. Withholding Tax (WHT) Calculation Logic
+function calculateWHT() {
+  const amount = parseFloat(document.getElementById('whtAmountInput').value) || 0;
+  const category = document.getElementById('whtCategory').value;
+
+  let filerRate = 0.04;
+  let nonFilerRate = 0.08;
+
+  if (category === 'toll') {
+    filerRate = 0.04;
+    nonFilerRate = 0.08;
+  } else if (category === 'services') {
+    filerRate = 0.15;
+    nonFilerRate = 0.30;
+  } else if (category === 'supplies') {
+    filerRate = 0.045;
+    nonFilerRate = 0.09;
+  } else if (category === 'imports') {
+    filerRate = 0.055;
+    nonFilerRate = 0.11;
+  }
+
+  const filerTax = amount * filerRate;
+  const nonFilerTax = amount * nonFilerRate;
+  
+  // Default main display uses Filer rate or selection context
+  document.getElementById('resWhtAmount').innerText = formatPKR(filerTax);
+  document.getElementById('resFilerTax').innerText = formatPKR(filerTax);
+  document.getElementById('resNonFilerTax').innerText = formatPKR(nonFilerTax);
+  document.getElementById('resNetPayment').innerText = formatPKR(amount - filerTax);
+}
 
         // Scroll Reveal Animation (Intersection Observer)
         document.addEventListener("DOMContentLoaded", function () {
