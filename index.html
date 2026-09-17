@@ -10,11 +10,11 @@
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#1f2937',      
-                        brandGray: '#4b5563',      
-                        brandGreen: '#10b981',     
-                        brandGreenHover: '#059669',
-                        brandLightBg: '#f9fafb',
+                        brandDark: '#1f2937',      // Yahan aap apna dark color code dalein
+                        brandGray: '#4b5563',      // Yahan gray/secondary color dalein
+                        brandGreen: '#10b981',     // Yahan main brand/accent color dalein (e.g., #0284c7 blue ke liye)
+                        brandGreenHover: '#059669', // Hover state ka color
+                        brandLightBg: '#f9fafb',   // Background light color
                     }
                 }
             }
@@ -32,7 +32,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-36 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <!-- Real Logo Image with Maximum Height Increased -->
+                <!-- Logo Image -->
                 <a href="#home" class="flex items-center">
                     <img src="Service Company Consultant Sleek Logo_3.png" alt="MS Peak Consulting Logo" class="h-32 sm:h-40 w-auto object-contain">
                 </a>
@@ -169,68 +169,5 @@
         </div>
     </section>
 
-    <!-- Footer / Contact Section Placeholder -->
-    <footer id="contact" class="bg-brandDark text-white py-12 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-2xl font-bold mb-4">MS Peak Consulting (Pvt. Ltd.)</h3>
-            <p class="text-gray-400 text-sm">Your Trusted Tax & Corporate Consultants</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript for Calculators -->
-    <script>
-        function calculateTax() {
-            let monthlySalary = parseFloat(document.getElementById('monthlySalary').value) || 0;
-            let yearlySalary = monthlySalary * 12;
-            let yearlyTax = 0;
-
-            // Basic slab-based calculation logic (Customizable as per Pakistani tax laws if required)
-            if (yearlySalary <= 600000) {
-                yearlyTax = 0;
-            } else if (yearlySalary <= 1200000) {
-                yearlyTax = (yearlySalary - 600000) * 0.01;
-            } else if (yearlySalary <= 2400000) {
-                yearlyTax = 6000 + (yearlySalary - 1200000) * 0.15;
-            } else if (yearlySalary <= 3600000) {
-                yearlyTax = 186000 + (yearlySalary - 2400000) * 0.25;
-            } else {
-                yearlyTax = 486000 + (yearlySalary - 3600000) * 0.35;
-            }
-
-            let monthlyTax = yearlyTax / 12;
-
-            document.getElementById('resMonthlySalary').innerText = monthlySalary.toLocaleString();
-            document.getElementById('resMonthlyTax').innerText = Math.round(monthlyTax).toLocaleString();
-            document.getElementById('resYearlySalary').innerText = yearlySalary.toLocaleString();
-            document.getElementById('resYearlyTax').innerText = Math.round(yearlyTax).toLocaleString();
-        }
-
-        function calculateWHT() {
-            let amount = parseFloat(document.getElementById('whtAmount').value) || 0;
-            let category = document.getElementById('whtCategory').value;
-            let filerRate = 0;
-            let nonFilerRate = 0;
-
-            if (category === 'services') {
-                filerRate = 0.15;
-                nonFilerRate = 0.30;
-            } else if (category === 'supplies') {
-                filerRate = 0.10;
-                nonFilerRate = 0.20;
-            } else if (category === 'imports') {
-                filerRate = 0.05;
-                nonFilerRate = 0.10;
-            }
-
-            let filerTax = amount * filerRate;
-            let nonFilerTax = amount * nonFilerRate;
-            let paymentAfterTax = amount - filerTax;
-
-            document.getElementById('resWhtAmount').innerText = amount.toLocaleString();
-            document.getElementById('resFiler').innerText = Math.round(filerTax).toLocaleString();
-            document.getElementById('resNonFiler').innerText = Math.round(nonFilerTax).toLocaleString();
-            document.getElementById('resPaymentAfterTax').innerText = Math.round(paymentAfterTax).toLocaleString();
-        }
-    </script>
 </body>
 </html>
