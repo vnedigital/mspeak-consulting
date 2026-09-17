@@ -6,107 +6,160 @@
     <title>MS Peak Consulting (Pvt. Ltd.) - Tax & Corporate Consultants</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Custom Dual-Shade & Animation Utilities */
+        @keyframes slideLoop {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: slideLoop 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Dual-Tone Background Gradient Utility */
+        .dual-bg {
+            background: linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #0f172a 100%);
+        }
+        .dual-card {
+            background: linear-gradient(145deg, rgba(30, 27, 75, 0.6), rgba(15, 23, 42, 0.8));
+            backdrop-filter: blur(12px);
+        }
     </style>
 </head>
-<body class="bg-white text-gray-800 antialiased">
+<body class="bg-slate-950 text-gray-100 antialiased selection:bg-blue-600 selection:text-white">
 
-    <!-- Header / Navbar -->
-    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <!-- Header / Navbar with Dual Shade Glassmorphism -->
+    <header class="bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <a href="#home" class="flex items-center">
-                    <img src="Service Company Consultant Sleek Logo_3.png" alt="MS Peak Consulting Logo" class="h-16 sm:h-20 w-auto object-contain">
+                    <img src="Service Company Consultant Sleek Logo_3.png" alt="MS Peak Consulting Logo" class="h-16 sm:h-20 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(37,99,235,0.3)]">
                 </a>
             </div>
             <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8 font-medium text-sm">
-                <a href="#home" class="text-blue-600 font-semibold transition">Home</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About Us</a>
-                <a href="#services" class="text-gray-600 hover:text-blue-600 transition">Services</a>
-                <a href="#why-us" class="text-gray-600 hover:text-blue-600 transition">Why Us</a>
-                <a href="#calculators" class="text-gray-600 hover:text-blue-600 transition">Tax Calculator</a>
-                <a href="#faqs" class="text-gray-600 hover:text-blue-600 transition">FAQs</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact Us</a>
+                <a href="#home" class="text-blue-400 font-semibold transition hover:text-blue-300">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-blue-400 transition">About Us</a>
+                <a href="#services" class="text-gray-300 hover:text-blue-400 transition">Services</a>
+                <a href="#why-us" class="text-gray-300 hover:text-blue-400 transition">Why Us</a>
+                <a href="#calculators" class="text-gray-300 hover:text-blue-400 transition">Tax Calculator</a>
+                <a href="#faqs" class="text-gray-300 hover:text-blue-400 transition">FAQs</a>
+                <a href="#contact" class="text-gray-300 hover:text-blue-400 transition">Contact Us</a>
             </nav>
             <div class="hidden md:block">
-                <a href="#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-md text-sm font-medium hover:bg-blue-700 transition shadow-sm">Get In Touch</a>
+                <a href="#contact" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-600/30">Get In Touch</a>
             </div>
             <!-- Mobile Menu Button -->
             <div class="md:hidden flex items-center">
-                <button id="menu-btn" class="text-gray-700 focus:outline-none text-2xl">
+                <button id="menu-btn" class="text-gray-200 focus:outline-none text-2xl">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-4 space-y-3">
-            <a href="#home" class="block text-gray-700 hover:text-blue-600 font-medium">Home</a>
-            <a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium">About Us</a>
-            <a href="#services" class="block text-gray-700 hover:text-blue-600 font-medium">Services</a>
-            <a href="#why-us" class="block text-gray-700 hover:text-blue-600 font-medium">Why Us</a>
-            <a href="#calculators" class="block text-gray-700 hover:text-blue-600 font-medium">Tax Calculator</a>
-            <a href="#faqs" class="block text-gray-700 hover:text-blue-600 font-medium">FAQs</a>
-            <a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium">Contact Us</a>
+        <div id="mobile-menu" class="hidden md:hidden dual-bg border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#home" class="block text-gray-200 hover:text-blue-400 font-medium">Home</a>
+            <a href="#about" class="block text-gray-200 hover:text-blue-400 font-medium">About Us</a>
+            <a href="#services" class="block text-gray-200 hover:text-blue-400 font-medium">Services</a>
+            <a href="#why-us" class="block text-gray-200 hover:text-blue-400 font-medium">Why Us</a>
+            <a href="#calculators" class="block text-gray-200 hover:text-blue-400 font-medium">Tax Calculator</a>
+            <a href="#faqs" class="block text-gray-200 hover:text-blue-400 font-medium">FAQs</a>
+            <a href="#contact" class="block text-gray-200 hover:text-blue-400 font-medium">Contact Us</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-24 lg:py-32">
+    <!-- Hero Section with Dual-Shade Background & Glowing Elements -->
+    <section id="home" class="relative dual-bg text-white py-24 lg:py-36 overflow-hidden">
+        <!-- Decorative Glow Gradients -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <span class="inline-block bg-white bg-opacity-10 text-blue-300 px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-blue-400/20">First-Class Tax & Corporate Consultancy</span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                Looking for a First-Class <br class="hidden sm:inline"><span class="text-blue-400">Tax Consultancy Firm?</span>
+            <span class="inline-flex items-center space-x-2 bg-blue-900/50 text-blue-300 px-4 py-1.5 rounded-full text-xs font-bold mb-6 border border-blue-500/30 shadow-inner">
+                <i class="fas fa-award text-amber-400"></i>
+                <span>First-Class Tax & Corporate Consultancy Firm</span>
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Empowering Your <br class="hidden sm:inline"><span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-400 bg-clip-text text-transparent">Financial & Corporate Future</span>
             </h1>
-            <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10">
-                We provide expert corporate structuring, taxation advisory, and financial compliance solutions to help your business achieve excellence.
+            <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-10 leading-relaxed font-light">
+                We deliver expert corporate structuring, taxation advisory, accounting, and regulatory compliance solutions tailored for maximum business growth.
             </p>
-            <div class="flex justify-center space-x-4">
-                <a href="#calculators" class="bg-blue-600 text-white px-8 py-3.5 rounded-md font-medium hover:bg-blue-700 transition shadow-md">Tax Calculators</a>
-                <a href="#contact" class="bg-white text-blue-950 px-8 py-3.5 rounded-md font-medium hover:bg-gray-100 transition">Get In Touch</a>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#calculators" class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-500 hover:to-indigo-500 transition shadow-xl shadow-blue-600/25">Explore Tax Calculators</a>
+                <a href="#contact" class="bg-slate-900/90 text-gray-200 border border-slate-700 px-8 py-4 rounded-xl font-semibold hover:bg-slate-800 transition">Schedule Consultation</a>
             </div>
         </div>
     </section>
 
-    <!-- Top Feature Cards -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20 mb-20">
+    <!-- Sliding Marquee / Features Bar (New Sliding Feature) -->
+    <div class="bg-gradient-to-r from-blue-900 via-indigo-950 to-blue-900 py-4 overflow-hidden border-y border-blue-800/40 shadow-inner">
+        <div class="animate-marquee whitespace-nowrap flex items-center space-x-12 text-sm font-semibold tracking-wide text-blue-200">
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> SECP Company Incorporation</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> FBR Income Tax & Sales Tax Returns</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Professional Monthly Bookkeeping</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Internal & External Audits</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Trademark & Legal Advisory</span>
+            <!-- Duplicate for smooth loop -->
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> SECP Company Incorporation</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> FBR Income Tax & Sales Tax Returns</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Professional Monthly Bookkeeping</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Internal & External Audits</span>
+            <span class="flex items-center"><i class="fas fa-check-circle text-amber-400 mr-2"></i> Trademark & Legal Advisory</span>
+        </div>
+    </div>
+
+    <!-- Top Feature Cards with Dual-Shade Hover Effects -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-20">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-gradient-to-b from-slate-800 to-slate-900 text-white p-8 rounded-2xl shadow-xl border border-slate-700">
-                <div class="text-3xl mb-4 text-blue-400"><i class="fas fa-chart-line"></i></div>
-                <h3 class="text-xl font-bold mb-2">Advanced Analytics</h3>
-                <p class="text-gray-300 text-sm">Growth, focus & financial analysis.</p>
+            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Advanced Analytics</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Data-driven growth, tax forecasting & deep financial analysis.</p>
             </div>
-            <div class="bg-gradient-to-b from-slate-800 to-slate-900 text-white p-8 rounded-2xl shadow-xl border border-slate-700">
-                <div class="text-3xl mb-4 text-blue-400"><i class="fas fa-bullseye"></i></div>
-                <h3 class="text-xl font-bold mb-2">Corporate Finance</h3>
-                <p class="text-gray-300 text-sm">Strategy is the foundation of success.</p>
+            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Corporate Finance</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Strategic financial planning as the foundation of enterprise success.</p>
             </div>
-            <div class="bg-gradient-to-b from-slate-800 to-slate-900 text-white p-8 rounded-2xl shadow-xl border border-slate-700">
-                <div class="text-3xl mb-4 text-blue-400"><i class="fas fa-handshake"></i></div>
-                <h3 class="text-xl font-bold mb-2">Business Consultation</h3>
-                <p class="text-gray-300 text-sm">Professional skilled advisory team.</p>
+            <div class="dual-card p-8 rounded-2xl shadow-2xl border border-slate-700/60 hover:border-blue-500/50 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">Business Consultation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Professional skilled advisory team guiding you through complex laws.</p>
             </div>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white overflow-hidden">
+    <section id="about" class="py-20 bg-slate-900/50 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Image/Card Box with Blue Theme -->
-                <div class="relative bg-gradient-to-br from-blue-900 to-slate-900 p-8 sm:p-12 rounded-3xl shadow-2xl text-white">
-                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <!-- Left Dual-Shade Box -->
+                <div class="relative dual-card p-8 sm:p-12 rounded-3xl shadow-2xl border border-slate-700/80 text-white">
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
                     <div class="relative z-10 space-y-6">
-                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
                             <i class="fas fa-balance-scale"></i>
                         </div>
                         <h3 class="text-3xl font-bold tracking-tight">MS Peak Consulting</h3>
-                        <p class="text-blue-200 text-sm leading-relaxed">
-                            Excellence in corporate advisory, taxation, and financial compliance with proven industry expertise.
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Excellence in corporate advisory, taxation, and financial compliance with proven industry expertise and dedicated client partnership.
                         </p>
-                        <div class="pt-4 border-t border-blue-800/60 flex items-center justify-between text-xs text-blue-300">
+                        <div class="pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-blue-300 font-semibold">
                             <span><i class="fas fa-check-circle text-blue-400 mr-1.5"></i> FBR Compliant</span>
                             <span><i class="fas fa-check-circle text-blue-400 mr-1.5"></i> SECP Registered</span>
                         </div>
@@ -115,21 +168,21 @@
 
                 <!-- Right Content -->
                 <div class="space-y-6">
-                    <div class="inline-flex items-center space-x-2 text-blue-600 font-semibold text-sm tracking-wider uppercase">
-                        <span class="w-8 h-0.5 bg-blue-600"></span>
+                    <div class="inline-flex items-center space-x-2 text-blue-400 font-semibold text-sm tracking-wider uppercase">
+                        <span class="w-8 h-0.5 bg-blue-500"></span>
                         <span>About Our Firm</span>
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                         About MS Peak Consulting (Pvt. Ltd.)
                     </h2>
-                    <p class="text-gray-600 leading-relaxed text-base">
-                        The aim of providing consultancy services in the fields of Tax, Corporate, Accounting, Bookkeeping, Audit, HR and other management consultancy services to clients.
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Our primary goal is to provide top-tier consultancy services in the fields of Tax, Corporate structuring, Accounting, Bookkeeping, Audit, HR, and complete management solutions.
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-base">
-                        The firm has provided consultancy services to numerous clients and prides itself in being client's first choice to fulfill their business needs. We work with a wide range of clients – from local businesses to large corporate companies and global organizations.
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        We take pride in being our clients' first choice for fulfilling rigorous business needs. We work with a broad spectrum of clients – ranging from ambitious local startups to large corporate entities and international organizations.
                     </p>
                     <div class="pt-4">
-                        <a href="#contact" class="inline-flex items-center space-x-3 bg-blue-600 text-white px-8 py-3.5 rounded-xl font-medium hover:bg-blue-700 transition shadow-md shadow-blue-600/20">
+                        <a href="#contact" class="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3.5 rounded-xl font-semibold hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-600/20">
                             <span>Get Consultation</span>
                             <i class="fas fa-arrow-right text-xs"></i>
                         </a>
@@ -139,90 +192,87 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="relative bg-slate-950 py-24 overflow-hidden">
+    <!-- Services Section with Dual-Tone Overlays -->
+    <section id="services" class="relative dual-bg py-24 overflow-hidden border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
             <div class="flex items-center space-x-3 mb-3">
-                <div class="w-10 h-0.5 bg-amber-500"></div>
+                <div class="w-10 h-0.5 bg-amber-400"></div>
                 <span class="text-amber-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Our Expertise</span>
             </div>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-                What We Do <span class="text-amber-500 font-serif italic">For You!</span>
+                What We Do <span class="text-amber-400 font-serif italic">For You!</span>
             </h2>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto lg:h-[450px]">
                 
-                <!-- Card 1: Taxation -->
-                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-white/10 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800');">
-                    <div class="absolute right-0 top-0 bottom-0 w-[1px] bg-white/20 hidden md:block"></div>
+                <!-- Card 1 -->
+                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-slate-700 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(9, 13, 22, 0.95)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800');">
                     <div class="flex justify-between items-start z-10">
-                        <span class="text-2xl font-light text-white/70">01</span>
+                        <span class="text-2xl font-light text-white/50">01</span>
                     </div>
                     <div class="z-10 space-y-4">
                         <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">Taxation</h3>
-                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500">
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-28 overflow-hidden transition-all duration-500 leading-relaxed">
                             Comprehensive income tax return filing, sales tax compliance, and strategic tax planning for individuals and corporations.
                         </p>
                         <div class="pt-2">
-                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-500 group-hover:border-amber-500 transition-all">
+                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-slate-950 group-hover:border-amber-400 transition-all">
                                 <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2: Accountancy -->
-                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-white/10 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800');">
-                    <div class="absolute right-0 top-0 bottom-0 w-[1px] bg-white/20 hidden md:block"></div>
+                <!-- Card 2 -->
+                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-slate-700 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(9, 13, 22, 0.95)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800');">
                     <div class="flex justify-between items-start z-10">
-                        <span class="text-2xl font-light text-white/70">02</span>
+                        <span class="text-2xl font-light text-white/50">02</span>
                     </div>
                     <div class="z-10 space-y-4">
                         <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">Accountancy</h3>
-                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500">
-                            Professional bookkeeping, financial statement preparation, ledger management, and comprehensive reporting.
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-28 overflow-hidden transition-all duration-500 leading-relaxed">
+                            Professional bookkeeping, financial statement preparation, ledger management, and detailed financial reports.
                         </p>
                         <div class="pt-2">
-                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-500 group-hover:border-amber-500 transition-all">
+                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-slate-950 group-hover:border-amber-400 transition-all">
                                 <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3: Corporate Structuring -->
-                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-white/10 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800');">
-                    <div class="absolute right-0 top-0 bottom-0 w-[1px] bg-white/20 hidden md:block"></div>
+                <!-- Card 3 -->
+                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-slate-700 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(9, 13, 22, 0.95)), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800');">
                     <div class="flex justify-between items-start z-10">
-                        <span class="text-2xl font-light text-white/70">03</span>
+                        <span class="text-2xl font-light text-white/50">03</span>
                     </div>
                     <div class="z-10 space-y-4">
                         <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">Corporate</h3>
-                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500">
-                            SECP company registration, statutory compliance, corporate restructuring, and legal secretarial services.
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-28 overflow-hidden transition-all duration-500 leading-relaxed">
+                            SECP company registration, statutory compliance, corporate restructuring, and professional secretarial services.
                         </p>
                         <div class="pt-2">
-                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-500 group-hover:border-amber-500 transition-all">
+                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-slate-950 group-hover:border-amber-400 transition-all">
                                 <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 4: Audit & Assurance -->
-                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-white/10 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');">
+                <!-- Card 4 -->
+                <div class="relative group rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 flex flex-col justify-between p-8 border border-slate-700 bg-cover bg-center min-h-[320px] md:min-h-full hover:md:flex-[2]" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(9, 13, 22, 0.95)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');">
                     <div class="flex justify-between items-start z-10">
-                        <span class="text-2xl font-light text-white/70">04</span>
+                        <span class="text-2xl font-light text-white/50">04</span>
                     </div>
                     <div class="z-10 space-y-4">
                         <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">Audit</h3>
-                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500">
-                            Independent internal and external audits, assurance engagements, risk management, and regulatory reviews.
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-28 overflow-hidden transition-all duration-500 leading-relaxed">
+                            Independent internal and external audits, assurance engagements, risk management, and regulatory compliance reviews.
                         </p>
                         <div class="pt-2">
-                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-500 group-hover:border-amber-500 transition-all">
+                            <a href="#contact" class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:bg-amber-400 group-hover:text-slate-950 group-hover:border-amber-400 transition-all">
                                 <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
@@ -233,115 +283,115 @@
         </div>
     </section>
 
-    <!-- NEW: Why Choose Us Section -->
-    <section id="why-us" class="py-20 bg-gray-50">
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-blue-600 font-semibold uppercase tracking-widest text-xs sm:text-sm">Our Core Strengths</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Why Businesses Trust MS Peak</h2>
-                <p class="text-gray-600 mt-2 text-sm">We combine deep regulatory expertise with a client-first approach to safeguard your financial success.</p>
+                <span class="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Our Core Strengths</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Why Businesses Trust MS Peak</h2>
+                <p class="text-gray-400 mt-2 text-sm">We combine deep regulatory expertise with a client-first approach to safeguard your financial success.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                    <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Expert Professionals</h3>
-                    <p class="text-gray-600 text-sm">Experienced chartered accountants and legal tax advisors handling your case.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Expert Professionals</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Experienced chartered accountants and legal tax advisors handling your case.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                    <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">100% Compliance</h3>
-                    <p class="text-gray-600 text-sm">Strict adherence to FBR, SECP, and regulatory frameworks to avoid penalties.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">100% Compliance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Strict adherence to FBR, SECP, and regulatory frameworks to avoid penalties.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                    <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Data Confidentiality</h3>
-                    <p class="text-gray-600 text-sm">Secure handling of all financial records, ledgers, and corporate data.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Data Confidentiality</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Secure handling of all financial records, ledgers, and corporate data.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">
+                <div class="dual-card p-8 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition group">
+                    <div class="w-12 h-12 bg-blue-600/20 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-6 font-bold group-hover:bg-blue-600 group-hover:text-white transition">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Dedicated Support</h3>
-                    <p class="text-gray-600 text-sm">Prompt responses and continuous advisory guidance whenever you need it.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">Dedicated Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Prompt responses and continuous advisory guidance whenever you need it.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Tax Calculators Section -->
-    <section id="calculators" class="py-20 bg-white">
+    <section id="calculators" class="py-20 dual-bg border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-blue-600 font-semibold uppercase tracking-widest text-xs sm:text-sm">Interactive Tools</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Quick Estimate Calculator</h2>
-                <p class="text-gray-600 mt-2 text-sm">Estimate your annual taxable income and rough tax liability metrics.</p>
+                <span class="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Interactive Tools</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Quick Estimate Calculator</h2>
+                <p class="text-gray-400 mt-2 text-sm">Estimate your annual taxable income and rough tax liability metrics.</p>
             </div>
 
-            <div class="bg-slate-900 text-white rounded-2xl shadow-xl p-8 border border-slate-800">
+            <div class="dual-card rounded-2xl shadow-2xl p-8 sm:p-10 border border-slate-700/80">
                 <div class="space-y-6">
                     <div>
                         <label class="block text-sm font-semibold text-gray-300 mb-2">Annual Income / Revenue (PKR)</label>
-                        <input type="number" id="incomeInput" placeholder="e.g. 2500000" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <input type="number" id="incomeInput" placeholder="e.g. 2500000" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-gray-300 mb-2">Select Category</label>
-                        <select id="taxCategory" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <select id="taxCategory" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:ring-2 focus:ring-blue-500 focus:outline-none">
                             <option value="salaried">Salaried Individual</option>
                             <option value="business">Business / Association of Persons</option>
                             <option value="company">Registered Corporate Company</option>
                         </select>
                     </div>
-                    <button onclick="calculateTax()" class="w-full bg-blue-600 text-white font-medium py-3 rounded-lg hover:bg-blue-700 transition shadow-md">Calculate Estimated Tax</button>
+                    <button onclick="calculateTax()" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 rounded-xl hover:from-blue-500 hover:to-indigo-500 transition shadow-lg shadow-blue-600/25">Calculate Estimated Tax</button>
                     
-                    <div id="resultBox" class="hidden mt-6 p-6 bg-blue-950 rounded-xl border border-blue-800 text-center">
+                    <div id="resultBox" class="hidden mt-6 p-6 bg-slate-900/90 rounded-xl border border-blue-500/40 text-center">
                         <h4 class="text-sm font-semibold text-blue-300">Estimated Tax Liability:</h4>
-                        <p id="taxOutput" class="text-2xl font-bold text-blue-400 mt-1">PKR 0</p>
-                        <p class="text-xs text-gray-400 mt-2">*Note: This is a rough estimation tool. Contact our expert consultants for precise FBR filing computations.</p>
+                        <p id="taxOutput" class="text-3xl font-extrabold text-blue-400 mt-1">PKR 0</p>
+                        <p class="text-xs text-gray-400 mt-2">*Note: This is a rough estimation tool. Contact our expert consultants for precise FBR computations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW: Frequently Asked Questions (FAQs) Section -->
-    <section id="faqs" class="py-20 bg-gray-50">
+    <!-- FAQs Section -->
+    <section id="faqs" class="py-20 bg-slate-950">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-semibold uppercase tracking-widest text-xs sm:text-sm">Got Questions?</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Frequently Asked Questions</h2>
-                <p class="text-gray-600 mt-2 text-sm">Find answers to common queries about our consulting and tax services.</p>
+                <span class="text-blue-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Got Questions?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Frequently Asked Questions</h2>
+                <p class="text-gray-400 mt-2 text-sm">Find answers to common queries about our consulting and tax services.</p>
             </div>
             <div class="space-y-4">
-                <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group">
-                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+                <details class="dual-card p-6 rounded-xl border border-slate-800 group">
+                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center">
                         How do I register a new private limited company with SECP?
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">
                         We handle the entire process including name availability check, drafting Memorandum & Articles of Association, digital signatures, and final incorporation certificate issuance from SECP.
                     </p>
                 </details>
-                <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group">
-                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+                <details class="dual-card p-6 rounded-xl border border-slate-800 group">
+                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center">
                         What documents are required for annual income tax filing in Pakistan?
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">
                         You generally need a wealth statement, bank statements up to June 30th, salary certificates or business income details, utility bills, and asset purchase/sale receipts.
                     </p>
                 </details>
-                <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 group">
-                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+                <details class="dual-card p-6 rounded-xl border border-slate-800 group">
+                    <summary class="font-semibold text-white cursor-pointer flex justify-between items-center">
                         Do you provide monthly bookkeeping services for small businesses?
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
+                        <i class="fas fa-chevron-down text-blue-400 group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="text-gray-600 text-sm mt-3 leading-relaxed">
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">
                         Yes! We offer complete monthly bookkeeping, ledger management, and financial reporting packages tailored to local businesses and e-commerce stores.
                     </p>
                 </details>
@@ -349,14 +399,14 @@
         </div>
     </section>
 
-    <!-- NEW & ENHANCED: Contact Section with Form -->
-    <section id="contact" class="py-20 bg-slate-950 text-white">
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 dual-bg border-t border-slate-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-amber-400 font-semibold uppercase tracking-widest text-xs sm:text-sm">Get In Touch</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6">Let's Discuss Your Business & Tax Needs</h2>
-                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                    <p class="text-gray-300 text-sm mb-8 leading-relaxed">
                         Ready to streamline your corporate compliance or file your taxes accurately? Reach out to our expert consultants today.
                     </p>
                     <div class="space-y-4 text-sm text-gray-300">
@@ -365,19 +415,19 @@
                         <p><i class="fas fa-clock text-amber-400 mr-3"></i> Monday - Saturday: 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl">
+                <div class="dual-card p-8 sm:p-10 rounded-2xl border border-slate-700 shadow-2xl">
                     <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully. Our team will contact you soon.');" class="space-y-4">
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Your Full Name</label>
-                            <input type="text" required placeholder="Muhammad Saqib" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm">
+                            <input type="text" required placeholder="Muhammad Saqib" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 text-sm">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Email Address</label>
-                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm">
+                            <input type="email" required placeholder="name@example.com" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 text-sm">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Service Required</label>
-                            <select class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm">
+                            <select class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 text-sm">
                                 <option>Tax Return Filing</option>
                                 <option>Company Registration (SECP)</option>
                                 <option>Bookkeeping & Accounting</option>
@@ -386,9 +436,9 @@
                         </div>
                         <div>
                             <label class="block text-xs font-semibold uppercase text-gray-400 mb-1">Message</label>
-                            <textarea rows="4" placeholder="How can we help you?" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-amber-400 text-sm"></textarea>
+                            <textarea rows="4" placeholder="How can we help you?" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-blue-500 text-sm"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 rounded-lg transition shadow-md">Send Message</button>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-4 rounded-xl transition shadow-lg shadow-blue-600/25">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -396,7 +446,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-8 text-center border-t border-slate-800 text-xs text-gray-500">
+    <footer class="bg-slate-950 text-white py-8 text-center border-t border-slate-900 text-xs text-gray-500">
         <div class="max-w-7xl mx-auto px-4">
             <p>&copy; 2026 MS Peak Consulting (Pvt. Ltd.). All rights reserved.</p>
         </div>
